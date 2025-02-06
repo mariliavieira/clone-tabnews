@@ -4,13 +4,20 @@
   "description": "Reposítório referente ao meu estudo no curso curso.dev do Filipe Deschamps, que será a implementação do http://www.tabnews.com.br",
   "main": "index.js",
   "scripts": {
-    "dev": "next dev"
+    "dev": "next dev",
+    "lint:check": "prettier --check .",
+    "lint:fix": "prettier --write ."
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "next": "^13.1.6",
+    "-": "^0.0.1",
+    "D": "^1.0.0",
+    "next": "^15.1.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "prettier": "^3.4.2"
   }
 }
