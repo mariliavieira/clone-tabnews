@@ -9,9 +9,15 @@ async function query(queryObject) {
     password: process.env.POSTGRES_PASSWORD,
   });
   await client.connect(); //Esse é um comando assíncrono, por isso o uso do await, comando assíncrono significa que roda em segundo plano permitindo que o restante do código continue sendo executado
-  const result = await client.query(queryObject);
-  await client.end();
-  return result;
+
+  try {
+    const result = await client.query(queryObject);
+    return result;
+  } catch (error) {
+    console.error(error);
+  } finally {
+    await client.end();
+  }
 }
 
 export default {
